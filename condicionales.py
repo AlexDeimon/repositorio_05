@@ -18,3 +18,10 @@ elif b > c:
 else:
     print("Mayor",c)
 
+#operadores logicos
+num1 = 10
+num2 = 20
+num3 = 30
+
+if num1 > num2 and num1 > num3:
+    print("el mayor es ",num1)
