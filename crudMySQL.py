@@ -28,3 +28,26 @@ val = [("GR-0002", "Maiz", 15000, 100), ("GR-0003", "Frijoles", 15000, 200), ("G
 cursor.executemany(sql, val)
 mydb.commt()
 print("Registro insertado: ", cursor.rowcount)
+
+#consultar registros
+sql = "SELECT * FROM tbproductos WHERE codigo=%s"
+val = ("GR-0005")
+cursor.execute(sql,val)
+result = cursor.fetchall()
+for x in result:
+    print(x)
+
+#eliminar un registro
+sql = "DELETE FROM tbproductos WHERE codigo=%s"
+val = ("GR-0005")
+cursor.execute(sql,val)
+mydb.commt()
+print("Registro eliminado correctamente")
+
+#actualizar registros
+sql = "UPDATE tbproductos SET valorunidad=20000 WHERE codigo=%s"
+val = ("GR-0005")
+cursor.execute(sql,val)
+mydb.commt()
+print("Registro modificado correctamente")
+
